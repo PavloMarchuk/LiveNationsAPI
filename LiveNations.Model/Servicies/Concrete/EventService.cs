@@ -15,19 +15,6 @@ namespace LiveNations.Model.Servicies.Concrete
 		{
 			_eventRepository = eventRepository;
 		}
-		public List<EventModel> GetTest()
-		{
-			List<EventDTO> listDTO = _eventRepository.GetTest();
-			List<EventModel> model = listDTO.Select(d => new EventModel
-			{
-				image_url = d.image_url,
-				start_time = d.start_time,
-				title = d.title,
-				IsTicketsAreOnSale = DateTime.Compare(DateTime.UtcNow, d.start_time) > 0
-			}).ToList();
-
-			return model;
-		}
 
 		public List<EventModel> GetTopTours(int longitude, int latitude)
 		{
@@ -35,13 +22,14 @@ namespace LiveNations.Model.Servicies.Concrete
 			List<EventModel> model = listDTO.Select(d => new EventModel
 			{
 				image_url = d.image_url,
-				start_time = d.start_time,
+				start_time = DateTime.Parse(d.start_time.Substring(0, 18)),
 				title = d.title,
-				IsTicketsAreOnSale = DateTime.Compare(DateTime.UtcNow, d.start_time) > 0
+				IsTicketsAreOnSale = DateTime.Compare(DateTime.UtcNow, DateTime.Parse(d.on_sale_at.Substring(0, 18))) > 0 && DateTime.Parse(d.on_sale_at.Substring(0, 18)) > new DateTime()
 			}).ToList();
 
 			return model;
 		}
-		//List<EventDTO> GetTopTours(int longitude, int latitude)
 	}
 }
+
+//;
