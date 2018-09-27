@@ -21,6 +21,10 @@ namespace LiveNations.Web.Modules
 			.As(typeof(IEventService))
 			.InstancePerRequest();
 
+			builder.RegisterType(typeof(CityService))
+			.As(typeof(ICityService))
+			.InstancePerRequest();
+
 		}
 	}
 }

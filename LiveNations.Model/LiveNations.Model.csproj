@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CityModel.cs" />
     <Compile Include="Models\EventModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicies\Abstract\ICityService.cs" />
     <Compile Include="Servicies\Abstract\IEventService.cs" />
+    <Compile Include="Servicies\Concrete\CityService.cs" />
     <Compile Include="Servicies\Concrete\EventService.cs" />
   </ItemGroup>
   <ItemGroup>

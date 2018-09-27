@@ -1,5 +1,4 @@
-﻿@using System;
-@using System.Globalization;
+﻿@using System.Globalization;
 @model IEnumerable<LiveNations.Model.Models.EventModel>
 @{
 	ViewBag.Title = "Top tours";
@@ -7,6 +6,10 @@
 
 <h2>Top tours</h2>
 
+<div class="col-xs-12 col-md-3 form-group">
+	<label class="control-label">Cyty:</label>
+	@Html.DropDownList("cityselect", ViewBag.CityIdSelectList as SelectList, new { @class = "form-control", onchange = "changeOption();" })
+</div>
 
 <table class="table">
 	<tr>
@@ -27,29 +30,44 @@
 
 	@foreach (var item in Model)
 	{
-	<tr>
-		<td>
-			<img src="@item.image_url" alt="img" width="150">
-		</td>
-		<td>
-			@Html.DisplayFor(modelItem => item.title)
-		</td>
-		<td>
-			<p>@item.start_time.DayOfWeek</p>
-			<p>@item.start_time.ToString("m", CultureInfo.CreateSpecificCulture("en-US"))</p>
-			<p>@item.start_time.ToString("t", CultureInfo.CreateSpecificCulture("en-US"))</p>
-		</td>
-		<td>
-			@if (item.IsTicketsAreOnSale)
-			{
-				<p>Yes</p>
-			}
-			else
-			{<p>No</p>}
-		</td>
-		<td>
-			@item.on_sale_at.ToString("f", CultureInfo.CreateSpecificCulture("en-US"))
-		</td>
-	</tr>
+		<tr>
+			<td>
+				<img src="@item.image_url" alt="img" width="150">
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.title)
+			</td>
+			<td>
+				<p>@item.start_time.DayOfWeek</p>
+				<p>@item.start_time.ToString("m", CultureInfo.CreateSpecificCulture("en-US"))</p>
+				<p>@item.start_time.ToString("t", CultureInfo.CreateSpecificCulture("en-US"))</p>
+			</td>
+			<td>
+				@if (item.IsTicketsAreOnSale)
+				{
+					<p>Yes</p>
+				}
+				else
+				{<p>No</p>}
+			</td>
+			<td>
+				@item.on_sale_at.ToString("f", CultureInfo.CreateSpecificCulture("en-US"))
+			</td>
+		</tr>
 	}
 </table>
+
+@section Scripts {
+	<script>
+		function changeOption() {
+			let select = document.getElementById("cityselect");
+			let  id = select.options[select.selectedIndex].value;
+			console.log(id);
+			if (id < 1) {
+				return false;
+			}
+			 
+			window.location = '@Url.Action("Index", "Events")' + '?id=' + id;
+		}
+	</script>
+}
