@@ -17,13 +17,14 @@
 		<th>
 			@Html.DisplayNameFor(model => model.start_time)
 		</th>
-		<th>
-			@Html.DisplayNameFor(model => model.title)
-		</th>
+		<th>@Html.DisplayNameFor(model => model.title)
 		<th>
 			@Html.DisplayNameFor(model => model.IsTicketsAreOnSale)
 		</th>
-		@*<th></th>*@
+		<th>
+			@Html.DisplayNameFor(model => model.on_sale_at)
+		</th>
+		<th></th>
 	</tr>
 
 	@foreach (var item in Model)
@@ -37,16 +38,18 @@
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.title)
-
 			</td>
 			<td>
 				@Html.DisplayFor(modelItem => item.IsTicketsAreOnSale)
 			</td>
-			@*<td>
+			<td>
+				@Html.DisplayFor(modelItem => item.on_sale_at)
+			</td>
+			<td>
 				@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
 				@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
 				@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-			</td>*@
+			</td>
 		</tr>
 	}
 

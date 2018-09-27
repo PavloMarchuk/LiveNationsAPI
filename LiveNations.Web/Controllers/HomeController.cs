@@ -1,4 +1,5 @@
 ﻿using LiveNations.Data.Models;
+using LiveNations.Data.Repositories.Abstract;
 using LiveNations.Data.Repositories.Concrete;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -7,14 +8,15 @@ namespace LiveNations.Web.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly EventRepository eventRepository;
-		public HomeController()
+		private readonly IEventRepositry _eventRepository;
+		public HomeController(IEventRepositry eventRepository)
 		{
-			eventRepository = new EventRepository();
+			_eventRepository = eventRepository;
 		}
+	 
 		public ActionResult Index()
 		{
-			List<EventModel> model = eventRepository.GetTest();
+			List<EventDTO> model = _eventRepository.GetTest();
 			return View(model);
 		}
 

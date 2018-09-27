@@ -1,6 +1,10 @@
-﻿namespace LiveNations.Data.Repositories.Abstract
+﻿using LiveNations.Data.Models;
+using System.Collections.Generic;
+
+namespace LiveNations.Data.Repositories.Abstract
 {
 	public interface IEventRepositry
 	{
+		List<EventDTO> GetTest();
 	}
 }

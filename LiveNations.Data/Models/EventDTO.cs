@@ -2,7 +2,7 @@
 
 namespace LiveNations.Data.Models
 {
-	public class EventModel
+	public class EventDTO
 	{
 		public string title { get; set; }
 		public DateTime start_time { get; set; }

@@ -3,7 +3,7 @@ using LiveNations.Data.Repositories.Abstract;
 using LiveNations.Data.Repositories.Concrete;
 namespace LiveNations.Web.Modules
 {
-	public class AdderessAutofacModule : Module
+	public class LiveNationsAutofacModule : Module
 	{
 
 		protected override void Load(ContainerBuilder builder)
