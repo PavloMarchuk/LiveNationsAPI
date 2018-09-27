@@ -1,16 +1,21 @@
-﻿using System;
+﻿using LiveNations.Data.Models;
+using LiveNations.Data.Repositories.Concrete;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LiveNations.Web.Controllers
 {
 	public class HomeController : Controller
 	{
+		private readonly EventRepository eventRepository;
+		public HomeController()
+		{
+			eventRepository = new EventRepository();
+		}
 		public ActionResult Index()
 		{
-			return View();
+			List<EventModel> model = eventRepository.GetTest();
+			return View(model);
 		}
 
 		public ActionResult About()
