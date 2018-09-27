@@ -45,6 +45,11 @@
     <Compile Include="Servicies\Abstract\IEventService.cs" />
     <Compile Include="Servicies\Concrete\EventService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\LiveNations.Data\LiveNations.Data.csproj">
+      <Project>{9F6A7EEF-7D05-41EB-AC3B-A6F53F7DDA34}</Project>
+      <Name>LiveNations.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

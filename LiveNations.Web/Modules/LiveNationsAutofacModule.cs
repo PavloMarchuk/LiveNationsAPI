@@ -1,6 +1,9 @@
 ﻿using Autofac;
 using LiveNations.Data.Repositories.Abstract;
 using LiveNations.Data.Repositories.Concrete;
+using LiveNations.Model.Servicies.Abstract;
+using LiveNations.Model.Servicies.Concrete;
+
 namespace LiveNations.Web.Modules
 {
 	public class LiveNationsAutofacModule : Module
@@ -11,6 +14,13 @@ namespace LiveNations.Web.Modules
 			builder.RegisterType(typeof(EventRepository))
 				.As(typeof(IEventRepositry))
 				.InstancePerRequest();
+
+
+
+			builder.RegisterType(typeof(EventService))
+			.As(typeof(IEventService))
+			.InstancePerRequest();
+
 		}
 	}
 }

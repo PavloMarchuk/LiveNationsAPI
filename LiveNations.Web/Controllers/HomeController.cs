@@ -1,6 +1,5 @@
-﻿using LiveNations.Data.Models;
-using LiveNations.Data.Repositories.Abstract;
-using LiveNations.Data.Repositories.Concrete;
+﻿using LiveNations.Model.Models;
+using LiveNations.Model.Servicies.Abstract;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -8,30 +7,16 @@ namespace LiveNations.Web.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly IEventRepositry _eventRepository;
-		public HomeController(IEventRepositry eventRepository)
+		private readonly IEventService _eventService;
+		public HomeController(IEventService eventService)
 		{
-			_eventRepository = eventRepository;
+			_eventService = eventService;
 		}
 	 
 		public ActionResult Index()
 		{
-			List<EventDTO> model = _eventRepository.GetTest();
+			List<EventModel> model = _eventService.GetTest();
 			return View(model);
-		}
-
-		public ActionResult About()
-		{
-			ViewBag.Message = "Your application description page.";
-
-			return View();
-		}
-
-		public ActionResult Contact()
-		{
-			ViewBag.Message = "Your contact page.";
-
-			return View();
-		}
+		} 
 	}
 }

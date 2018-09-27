@@ -1,12 +1,10 @@
-﻿using System;
+﻿using LiveNations.Model.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LiveNations.Model.Servicies.Abstract
 {
-	interface IEventService
+	public interface IEventService
 	{
+		List<EventModel> GetTest();
 	}
 }

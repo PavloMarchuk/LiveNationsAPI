@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LiveNations.Model.Models.EventModel>
+﻿@model IEnumerable<LiveNations.Data.Models.EventDTO>
 
 @{
 	ViewBag.Title = "Index";
@@ -19,10 +19,12 @@
 		</th>
 		<th>
 			@Html.DisplayNameFor(model => model.title)
+		<th>
 		</th>
 		<th>
-			@Html.DisplayNameFor(model => model.IsTicketsAreOnSale)
+			@Html.DisplayNameFor(model => model.on_sale_at)
 		</th>
+		<th></th>
 	</tr>
 
 	@foreach (var item in Model)
@@ -38,8 +40,16 @@
 				@Html.DisplayFor(modelItem => item.title)
 			</td>
 			<td>
-				@Html.DisplayFor(modelItem => item.IsTicketsAreOnSale)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.on_sale_at)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+				@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+				@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
 			</td>
 		</tr>
 	}
+
 </table>
