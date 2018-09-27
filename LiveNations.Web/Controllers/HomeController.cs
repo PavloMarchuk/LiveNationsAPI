@@ -12,11 +12,11 @@ namespace LiveNations.Web.Controllers
 		{
 			_eventService = eventService;
 		}
-	 
+
 		public ActionResult Index()
 		{
-			List<EventModel> model = _eventService.GetTest();
+			List<EventModel> model = _eventService.GetTopTours(40, -73);
 			return View(model);
-		} 
+		}
 	}
 }

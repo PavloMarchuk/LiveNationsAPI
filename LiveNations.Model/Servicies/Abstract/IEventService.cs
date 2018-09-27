@@ -6,5 +6,6 @@ namespace LiveNations.Model.Servicies.Abstract
 	public interface IEventService
 	{
 		List<EventModel> GetTest();
+		List<EventModel> GetTopTours(int longitude, int latitude);
 	}
 }

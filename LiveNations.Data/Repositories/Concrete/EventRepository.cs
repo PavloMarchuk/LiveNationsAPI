@@ -1,5 +1,6 @@
 ﻿using LiveNations.Data.Models;
 using LiveNations.Data.Repositories.Abstract;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,19 @@ namespace LiveNations.Data.Repositories.Concrete
 				},
 			};
 			return list;
+		}
+
+		//https://api.livenation.com/charts/top-tours?location=54,-113
+		public List<EventDTO> GetTopTours(int longitude, int latitude)
+		{
+			string location = longitude.ToString() + "," + latitude.ToString();
+
+			RestClient client = new RestClient(@"https://api.livenation.com");
+			RestRequest request = new RestRequest(@"charts/top-tours/", Method.GET);
+			request.AddUrlSegment("location", location);
+
+			List<EventDTO> queryResult = client.Execute<List<EventDTO>>(request).Data;
+			return queryResult;
 		}
 	}
 }

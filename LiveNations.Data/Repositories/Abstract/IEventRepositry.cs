@@ -6,5 +6,6 @@ namespace LiveNations.Data.Repositories.Abstract
 	public interface IEventRepositry
 	{
 		List<EventDTO> GetTest();
+		List<EventDTO> GetTopTours(int longitude, int latitude);
 	}
 }

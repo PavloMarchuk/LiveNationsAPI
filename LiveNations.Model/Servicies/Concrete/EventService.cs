@@ -28,5 +28,20 @@ namespace LiveNations.Model.Servicies.Concrete
 
 			return model;
 		}
+
+		public List<EventModel> GetTopTours(int longitude, int latitude)
+		{
+			List<EventDTO> listDTO = _eventRepository.GetTopTours(longitude, latitude);
+			List<EventModel> model = listDTO.Select(d => new EventModel
+			{
+				image_url = d.image_url,
+				start_time = d.start_time,
+				title = d.title,
+				IsTicketsAreOnSale = DateTime.Compare(DateTime.UtcNow, d.start_time) > 0
+			}).ToList();
+
+			return model;
+		}
+		//List<EventDTO> GetTopTours(int longitude, int latitude)
 	}
 }
