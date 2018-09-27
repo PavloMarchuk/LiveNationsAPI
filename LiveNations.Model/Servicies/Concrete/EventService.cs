@@ -22,9 +22,10 @@ namespace LiveNations.Model.Servicies.Concrete
 			List<EventModel> model = listDTO.Select(d => new EventModel
 			{
 				image_url = d.image_url,
-				start_time = DateTime.Parse(d.start_time.Substring(0, 18)),
+				start_time = DateTime.Parse(d.start_time.Substring(0, 18)).ToLocalTime(),
 				title = d.title,
-				IsTicketsAreOnSale = DateTime.Compare(DateTime.UtcNow, DateTime.Parse(d.on_sale_at.Substring(0, 18))) > 0 && DateTime.Parse(d.on_sale_at.Substring(0, 18)) > new DateTime()
+				IsTicketsAreOnSale = DateTime.Compare(DateTime.UtcNow, DateTime.Parse(d.on_sale_at.Substring(0, 18))) > 0 && DateTime.Parse(d.on_sale_at.Substring(0, 18)) > new DateTime(),
+				on_sale_at = DateTime.Parse(d.on_sale_at.Substring(0, 18)).ToLocalTime()
 			}).ToList();
 
 			return model;

@@ -5,10 +5,10 @@ using System.Web.Mvc;
 
 namespace LiveNations.Web.Controllers
 {
-	public class HomeController : Controller
+	public class EventsController : Controller
 	{
 		private readonly IEventService _eventService;
-		public HomeController(IEventService eventService)
+		public EventsController(IEventService eventService)
 		{
 			_eventService = eventService;
 		}

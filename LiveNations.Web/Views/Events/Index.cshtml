@@ -1,0 +1,55 @@
+﻿@using System;
+@using System.Globalization;
+@model IEnumerable<LiveNations.Model.Models.EventModel>
+@{
+	ViewBag.Title = "Top tours";
+}
+
+<h2>Top tours</h2>
+
+
+<table class="table">
+	<tr>
+		<th> </th>
+		<th>
+			@Html.DisplayNameFor(model => model.title)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.start_time)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.IsTicketsAreOnSale)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.on_sale_at)
+		</th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+	<tr>
+		<td>
+			<img src="@item.image_url" alt="img" width="150">
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.title)
+		</td>
+		<td>
+			<p>@item.start_time.DayOfWeek</p>
+			<p>@item.start_time.ToString("m", CultureInfo.CreateSpecificCulture("en-US"))</p>
+			<p>@item.start_time.ToString("t", CultureInfo.CreateSpecificCulture("en-US"))</p>
+		</td>
+		<td>
+			@if (item.IsTicketsAreOnSale)
+			{
+				<p>Yes</p>
+			}
+			else
+			{<p>No</p>}
+		</td>
+		<td>
+			@item.on_sale_at.ToString("f", CultureInfo.CreateSpecificCulture("en-US"))
+		</td>
+	</tr>
+	}
+</table>
