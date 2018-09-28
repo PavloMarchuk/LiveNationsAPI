@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using LiveNations.Data.Models;
+﻿using LiveNations.Data.Models;
 using LiveNations.Model.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
-namespace LiveNations.Model.Tests.EventServiceTests
+namespace LiveNations.Model.UnitTests.EventServiceTests
 {
 	[TestClass]
 	public class GetTopToursMethodShould

@@ -1,10 +1,9 @@
 ﻿using LiveNations.Data.Repositories.Abstract;
 using LiveNations.Model.Servicies.Abstract;
 using LiveNations.Model.Servicies.Concrete;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace LiveNations.Model.Tests.EventServiceTests
+namespace LiveNations.Model.UnitTests.EventServiceTests
 {
 	public class EventServiceSut
 	{
