@@ -22,7 +22,7 @@ namespace LiveNations.Model.Servicies.Concrete
 
 		public CityModel Get(int id)
 		{
-			CityModel cityModel = _cities.Where(c => c.Id == id).FirstOrDefault();
+			CityModel cityModel = _cities.FirstOrDefault(c => c.Id == id);
 			if (cityModel == null)
 			{
 				throw new Exception("City not found");

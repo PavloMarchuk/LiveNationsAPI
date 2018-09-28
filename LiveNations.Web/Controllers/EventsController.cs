@@ -24,16 +24,8 @@ namespace LiveNations.Web.Controllers
 			List<EventModel> model = _eventService.GetTopTours(city.Latitude, city.Longitude);
 
 			List<CityModel> cities = _cityService.GetAll();
-			ViewBag.CityIdSelectList = new SelectList(GetCity.Union(cities), "Id", "Name", city.Id);
+			ViewBag.CityIdSelectList = new SelectList(cities, "Id", "Name", city.Id);
 			return View(model);
-		}
-
-		private IEnumerable<CityModel> GetCity
-		{
-			get
-			{
-				yield return new CityModel { Id = 0, Name = "Select City" };
-			}
-		}
+		}		 
 	}
 }

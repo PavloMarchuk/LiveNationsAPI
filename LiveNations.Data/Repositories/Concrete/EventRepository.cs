@@ -9,7 +9,7 @@ namespace LiveNations.Data.Repositories.Concrete
 	{
 		public List<EventDto> GetTopTours(int longitude, int latitude)
 		{
-			string location = longitude.ToString() + "," + latitude.ToString();
+			string location = $"{longitude}, {latitude}"; 
 			RestClient client = new RestClient(@"https://api.livenation.com/charts/top-tours?location=" + location);
 			RestRequest request = new RestRequest(Method.GET);
 			ResponceObject responceData = client.Execute<ResponceObject>(request).Data;
