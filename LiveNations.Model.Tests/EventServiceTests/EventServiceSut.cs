@@ -3,7 +3,7 @@ using LiveNations.Model.Servicies.Abstract;
 using LiveNations.Model.Servicies.Concrete;
 using Moq;
 
-namespace LiveNations.Model.UnitTests.EventServiceTests
+namespace LiveNations.Model.Tests.EventServiceTests
 {
 	public class EventServiceSut
 	{

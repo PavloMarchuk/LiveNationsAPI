@@ -3,7 +3,7 @@ using LiveNations.Model.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace LiveNations.Model.UnitTests.EventServiceTests
+namespace LiveNations.Model.Tests.EventServiceTests
 {
 	[TestClass]
 	public class GetTopToursMethodShould

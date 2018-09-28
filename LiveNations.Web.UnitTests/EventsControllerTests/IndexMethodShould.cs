@@ -1,8 +1,7 @@
-﻿using System;
+﻿using LiveNations.Model.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using LiveNations.Model.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LiveNations.Web.UnitTests.EventsControllerTests
 {
@@ -17,7 +16,7 @@ namespace LiveNations.Web.UnitTests.EventsControllerTests
 		}
 
 		[TestMethod]
-		public void TestMethod1()
+		public void ReturnViewResult()
 		{
 			// Arrange
 			CityModel city = new CityModel { Id = 1, Name = "New York", Latitude = 40, Longitude = -73 };
