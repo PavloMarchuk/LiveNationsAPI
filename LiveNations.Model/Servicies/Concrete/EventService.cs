@@ -18,7 +18,7 @@ namespace LiveNations.Model.Servicies.Concrete
 
 		public List<EventModel> GetTopTours(int longitude, int latitude)
 		{
-			List<EventDTO> listDTO = _eventRepository.GetTopTours(longitude, latitude);
+			List<EventDto> listDTO = _eventRepository.GetTopTours(longitude, latitude);
 			List<EventModel> model = listDTO.Select(d => new EventModel
 			{
 				image_url = d.image_url,

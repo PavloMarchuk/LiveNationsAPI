@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNations.Model", "LiveNa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNations.Data", "LiveNations.Data\LiveNations.Data.csproj", "{9F6A7EEF-7D05-41EB-AC3B-A6F53F7DDA34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveNations.Model.Tests", "LiveNations.Model.Tests\LiveNations.Model.Tests.csproj", "{F81232C4-FF34-4885-A629-15BED797477B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{9F6A7EEF-7D05-41EB-AC3B-A6F53F7DDA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F6A7EEF-7D05-41EB-AC3B-A6F53F7DDA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F6A7EEF-7D05-41EB-AC3B-A6F53F7DDA34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F81232C4-FF34-4885-A629-15BED797477B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F81232C4-FF34-4885-A629-15BED797477B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F81232C4-FF34-4885-A629-15BED797477B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F81232C4-FF34-4885-A629-15BED797477B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{D1F1E35C-61C2-4007-8A27-67452D67DAAA} = {C01F5D60-4F0D-4A2C-8204-AD83CE05D2E1}
 		{E2ECC9EB-123E-4CB1-8D92-A3C334EA7AFF} = {0E5D05F9-4083-4EFD-A597-F5B3DB814373}
 		{9F6A7EEF-7D05-41EB-AC3B-A6F53F7DDA34} = {1697E6AD-D7E3-4D31-90A1-E342504D8C89}
+		{F81232C4-FF34-4885-A629-15BED797477B} = {C01F5D60-4F0D-4A2C-8204-AD83CE05D2E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ED7D5B59-4ECB-43F6-82EB-059F240CF7EE}

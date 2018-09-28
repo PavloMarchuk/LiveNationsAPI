@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\EventDTO.cs" />
+    <Compile Include="Models\EventDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Abstract\IEventRepositry.cs" />
     <Compile Include="Repositories\Concrete\EventRepository.cs" />
